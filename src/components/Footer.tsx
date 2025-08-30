@@ -34,7 +34,7 @@ export default function Footer() {
               {/* <li><a href="#" className="text-gray-300 hover:text-mint transition-colors font-medium">Learning Dashboard</a></li>
               <li><a href="#" className="text-gray-300 hover:text-mint transition-colors font-medium">Progress Reports</a></li> */}
             </ul>
-            <h3 className="text-lg font-playful mt-6 mb-4 text-blue-300 hover:text-sunshine" onClick={() => window.open('https://www.boostmychild.com/developmentareas', '_blank')}>Develpment Areas</h3>
+            <h3 className="text-lg font-playful mt-6 mb-4 text-blue-300 hover:text-sunshine" onClick={() => window.open('https://www.boostmychild.com/developmentareas', '_blank')}>Development Areas</h3>
           </div>
           
           {/* Contact */}
