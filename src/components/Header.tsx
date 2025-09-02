@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, X, BookOpen } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
+import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -7,6 +8,7 @@ interface HeaderProps {
 }
 
 export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
+    const navigate = useNavigate();
   return (
     <header className="h-25 bg-gradient-to-r from-sunshine to-peach shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,8 +22,8 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
           <nav className="hidden md:flex space-x-8">
             <a href="#products" className="text-gray-600 hover:text-coral text-xl transition-colors font-semibold">Products</a>
             <a href="#features" className="text-gray-600 hover:text-coral text-xl transition-colors font-semibold">Features</a>
-            <a href="https://www.boostmychild.com/about" className="text-gray-600 hover:text-coral text-xl transition-colors font-semibold">About</a>
-            <a href="https://www.boostmychild.com/contactus" className="text-gray-600 hover:text-coral text-xl transition-colors font-semibold">Contact</a>
+            <a className="text-gray-600 hover:text-coral text-xl transition-colors font-semibold" onClick={() => navigate("/About")}>About</a>
+            <a className="text-gray-600 hover:text-coral text-xl transition-colors font-semibold" onClick={() => navigate("/contact")}>Contact</a>
           </nav>
           
           <div className="hidden md:flex space-x-4">

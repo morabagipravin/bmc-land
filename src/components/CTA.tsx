@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function CTA() {
   const articles = [
@@ -115,15 +116,24 @@ export default function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-            <button
+            {/* <button
               className="bg-white text-coral px-8 py-4 rounded-full hover:bg-mint hover:text-white transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-lg font-bold shadow-lg"
               onClick={() =>
-                window.open("https://forms.gle/LMz9Mig6T3wfdyHw7", "_blank")
+                window.open("", "_blank")
               }
             >
               <span>Start Free Trial</span>
               <ArrowRight className="h-5 w-5" />
-            </button>
+            </button> */}
+
+            <Link
+              to="/contact#freetrail"
+              className="bg-coral text-white px-8 py-4 rounded-full hover:bg-sunshine hover:text-coral transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-lg font-semibold shadow-lg"
+            >
+              <span>Start Free Trial</span>
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+
             <button
               className="border-4 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-coral transition-all duration-300 text-lg font-bold shadow-lg"
               onClick={() =>
