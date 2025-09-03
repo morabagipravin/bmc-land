@@ -1,22 +1,27 @@
 import { ArrowRight } from "lucide-react";
 import FreeTrailForm from "./FreeTrailForm";
+import Footer from "./Footer";
+import ContactusImg from "/contactus_img.png"
 
 const ContactUs: React.FC = () => {
 
     return (
-        <div className="p-2 bg-gradient-to-br from-lavender via-sky/20 to-mint/30 py-20 text-gray-600">
+        <div className="bg-gradient-to-br from-lavender via-sky/20 to-mint/30 text-gray-600">
             {/* Info Section */}
-            <div className="text-center">
-                <p className="text-4xl font-semibold">Contact Information</p>
-                <p className="text-2xl">We provide the best education services.</p>
+            <div className="hidden lg:block">
+                <img src={ContactusImg} alt="contact image" className="w-full h-52 object-cover" />
+            </div>
+            <div className="text-center pt-5">
+                <h3 className="text-4xl font-black text-coral">Contact Information</h3>
+                <p className="text-xl sm:text-2xl font-extrabold text-lime-600">We provide the best education services.</p>
             </div>
 
 
-            <div className="p-10 grid gap-10 lg:grid-cols-2">
-                <div className="flex flex-col align-middle ">
-                    <div>
-                        <span className="text-xl font-semibold">Office Adress</span>
-                        <p className="text-lg font-bold">Shruti Enclave, Baner, Pune, Maharashtra 411045</p>
+            <div className="px-10 lg:px-20 py-5 grid gap-10 lg:grid-cols-2">
+                <div className="text-center lg:text-start flex flex-col align-middle mx-10">
+                    <div className="">
+                        <p className="text-xl font-semibold">Office Adress</p>
+                        <a href="https://share.google/Z8kcIEwow7Ss66MuO" className="text-lg font-bold">Shruti Enclave, Baner, Pune, Maharashtra 411045</a>
                     </div>
                     <br />
                     <div className="flex align-middle justify-center flex-col">
@@ -30,16 +35,13 @@ const ContactUs: React.FC = () => {
                         <a href="mailto:info@school.com?body=My custom mail body" className="text-lg font-bold">info@school.com</a>
                     </div>
                     <br />
-                    <div className="flex justify-center">
-                        <a className="w-60 bg-white text-coral px-8 py-4 rounded-full 
-                            hover:bg-mint hover:text-white transition-all duration-300 
-                            transform hover:scale-105 flex items-center justify-center 
-                            space-x-2 text-lg font-bold shadow-lg" href="#freetrail"><span className="">Schedule Demo</span>
+                    <div className="hidden sm:flex justify-center">
+                        <a className="bg-coral text-white px-8 py-4 rounded-full hover:bg-sunshine hover:text-coral transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-lg font-semibold shadow-lg" href="#freetrail"><span className="">Schedule Demo</span>
                             <ArrowRight className="h-5 w-5" />
                         </a>
                     </div>
                 </div>
-                <div className="flex flex-col border-2 rounded-xl p-5 isolate bg-white px-6">
+                <div className="flex flex-col border-2 rounded-xl isolate bg-white p-5 lg:p-10 xl:mr-10">
                     <div
                         aria-hidden="true"
                         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -113,11 +115,11 @@ const ContactUs: React.FC = () => {
 
                         </div>
                         
-                        <div className="mt-10">
+                        <div className="mt-10 mb-5 ">
                             <button
                                 id="freetrail"
                                 type="submit"
-                                className="bg-coral text-white px-8 py-4 rounded-full hover:bg-sunshine hover:text-coral transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-lg font-semibold shadow-lg"
+                                className="bg-coral text-white  px-8 p-4 w-full rounded-full hover:bg-sunshine hover:text-coral transition-all duration-300 transform hover:scale-105 space-x-2 text-lg font-semibold shadow-lg"
                             >
                                 Submit
                             </button>
@@ -128,6 +130,7 @@ const ContactUs: React.FC = () => {
             <div>
                 <FreeTrailForm />
             </div>
+            <Footer />
         </div>
     );
 };

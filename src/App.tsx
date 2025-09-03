@@ -9,6 +9,7 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import ContactUs from "./components/ContactUs";
 import About from "./components/About";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,6 +33,7 @@ function App() {
               </>
             }
           />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>

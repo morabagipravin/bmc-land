@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { GraduationCap, Smartphone, BarChart3, Users, Brain, Target, MessageCircle, Calendar } from 'lucide-react';
 
 export default function Products() {
@@ -28,7 +28,7 @@ export default function Products() {
               </div>
             </div>
             
-            <p className="text-gray-700 mb-6 text-lg leading-relaxed text-xl">
+            <p className="text-gray-700 mb-6 text-lg leading-relaxed">
             AI-powered holistic development tracking aligned to NEP/NCF standards.
             </p>
             
@@ -70,7 +70,7 @@ export default function Products() {
               </div>
             </div>
             
-            <p className="text-gray-700 mb-6 text-lg leading-relaxed text-xl">
+            <p className="text-gray-700 mb-6 text-lg leading-relaxed">
             Personalized growth suggestions and progress insights, designed by child development experts.
             </p>
             
