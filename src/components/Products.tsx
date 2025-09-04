@@ -108,15 +108,15 @@ export default function Products() {
             where preschools teach, parents support, and children shine bright!
           </p>
           <div className="flex justify-center items-center space-x-8">
-            <div className="bg-mint/20 rounded-full p-4 border-4 border-mint/40">
+            <div className="bg-mint/20 rounded-full p-0 sm:p-4 border-4 border-mint/40">
               <GraduationCap className="h-8 w-8 text-mint" />
             </div>
             <div className="text-2xl text-coral font-playful">+</div>
-            <div className="bg-sunshine/20 rounded-full p-4 border-4 border-sunshine/40">
+            <div className="bg-sunshine/20 rounded-full p-0 sm:p-4 border-4 border-sunshine/40">
               <Smartphone className="h-8 w-8 text-sunshine" />
             </div>
             <div className="text-2xl text-coral font-playful">=</div>
-            <div className="bg-coral/20 rounded-full p-4 border-4 border-coral/40">
+            <div className="bg-coral/20 rounded-full p-0 sm:p-4 border-4 border-coral/40">
               <Target className="h-8 w-8 text-coral" />
             </div>
           </div>

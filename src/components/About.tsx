@@ -5,9 +5,9 @@ import Footer from "./Footer";
 
 const AboutUs: React.FC = () => {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       {/* About Section */}
-      <section className="py-12 bg-gradient-to-br from-lavender via-sky/20 to-mint/30 text-gray-700 font-semibold">
+      <section className="flex-grow py-5 bg-gradient-to-br from-lavender via-sky/20 to-mint/30 text-gray-700 font-semibold">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10 items-start">
           {/* About Text */}
           <div className="md:col-span-2">

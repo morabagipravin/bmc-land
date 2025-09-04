@@ -59,11 +59,11 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
                 }`
               }
             >
-              Contact
+              Contact Us
             </NavLink>
 
             {/* Privacy Policy */}
-            <NavLink
+            {/* <NavLink
               to="/privacy-policy"
               className={({ isActive }) =>
                 `text-xl font-semibold transition-colors ${
@@ -74,7 +74,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
               }
             >
               Privacy Policy
-            </NavLink>
+            </NavLink> */}
           </nav>
 
           {/* <Link to="/#products" className=" text-gray-600 text-xl hover:text-coral transition-colors font-semibold">Producs</Link> */}
@@ -118,50 +118,54 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
           <div className="md:hidden py-4 border-t border-white/20">
             <nav className="flex flex-col items-center space-y-4">
               {/* Home */}
-            <NavLink
-              to="/"
-              end
-              className={({ isActive }) =>
-                `text-xl font-semibold transition-colors ${
-                  isActive
-                    ? "text-coral border-b-2 border-coral"
-                    : "text-gray-600 hover:text-coral"
-                }`
-              }
-            >
-              Home
-            </NavLink>
+              <NavLink
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                to="/"
+                end
+                className={({ isActive }) =>
+                  `text-xl font-semibold transition-colors ${
+                    isActive
+                      ? "text-coral border-b-2 border-coral"
+                      : "text-gray-600 hover:text-coral"
+                  }`
+                }
+              >
+                Home
+              </NavLink>
 
-            {/* About */}
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `text-xl font-semibold transition-colors ${
-                  isActive
-                    ? "text-coral border-b-2 border-coral"
-                    : "text-gray-600 hover:text-coral"
-                }`
-              }
-            >
-              About
-            </NavLink>
+              {/* About */}
+              <NavLink
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                to="/about"
+                className={({ isActive }) =>
+                  `text-xl font-semibold transition-colors ${
+                    isActive
+                      ? "text-coral border-b-2 border-coral"
+                      : "text-gray-600 hover:text-coral"
+                  }`
+                }
+              >
+                About
+              </NavLink>
 
-            {/* Contact */}
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `text-xl font-semibold transition-colors ${
-                  isActive
-                    ? "text-coral border-b-2 border-coral"
-                    : "text-gray-600 hover:text-coral"
-                }`
-              }
-            >
-              Contact
-            </NavLink>
+              {/* Contact */}
+              <NavLink
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                to="/contact"
+                className={({ isActive }) =>
+                  `text-xl font-semibold transition-colors ${
+                    isActive
+                      ? "text-coral border-b-2 border-coral"
+                      : "text-gray-600 hover:text-coral"
+                  }`
+                }
+              >
+                Contact Us
+              </NavLink>
 
               {/* Privacy Policy */}
-              <NavLink
+              {/* <NavLink
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
                 to="/privacy-policy"
                 className={({ isActive }) =>
                   `text-xl font-semibold transition-colors ${
@@ -172,7 +176,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
                 }
               >
                 Privacy Policy
-              </NavLink>
+              </NavLink> */}
 
               {/* <Link
                 to="/#products"

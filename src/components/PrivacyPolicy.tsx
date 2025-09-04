@@ -1,12 +1,14 @@
-import React from 'react'
-import Footer from './Footer';
+import React from "react";
+import Footer from "./Footer";
 
 const PrivacyPolicy = () => {
   return (
-      <div className="privacy-page bg-gradient-to-br from-lavender via-sky/20 to-mint/30 text-gray-600 font-semibold">
-
-      {/* Privacy Content */}
-      <section id="privacy" className="privacy_section py-12 px-20">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-lavender via-sky/20 to-mint/30 text-gray-600 font-semibold">
+      {/* Main content should grow */}
+      <section
+        id="privacy"
+        className="privacy_section flex-grow py-5 px-3 lg:px-20"
+      >
         <div className="container mx-auto px-4">
           {/* Intro */}
           <div className="mb-10">
@@ -32,7 +34,6 @@ const PrivacyPolicy = () => {
 
           {/* Sections */}
           <div className="space-y-10">
-            {/* Example Section */}
             <div>
               <h4 className="text-xl mb-4">
                 1. Personally Identifiable Information and Other Information
@@ -48,7 +49,6 @@ const PrivacyPolicy = () => {
                 Once you give us your personal information, you are not
                 anonymous to us...
               </p>
-              {/* Keep adding more <p> elements here for the rest of the content */}
             </div>
 
             <div>
@@ -62,7 +62,6 @@ const PrivacyPolicy = () => {
               </p>
             </div>
 
-            {/* Continue mapping other sections like 3,4,5,6,7 */}
             <div>
               <h4 className="text-xl mb-4">3. Grievance</h4>
               <p>
@@ -92,9 +91,11 @@ const PrivacyPolicy = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer sticks to bottom */}
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default PrivacyPolicy;
