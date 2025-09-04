@@ -127,17 +127,14 @@ export default function CTA() {
             </button> */}
 
             <Link
-              to="/contact#freetrail"
-              className="w-60 bg-white text-coral px-8 py-4 rounded-full 
-                            hover:bg-mint hover:text-white transition-all duration-300 
-                            transform hover:scale-105 flex items-center justify-center 
-                            space-x-2 text-lg font-bold shadow-lg"
+              to="/freetrialform"
+              className="bg-coral text-white px-8 py-4 rounded-full hover:bg-sunshine hover:text-coral transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-lg font-semibold shadow-lg"
             >
               <span>Start Free Trial</span>
               <ArrowRight className="h-5 w-5" />
             </Link>
             
-            <button className="flex items-center space-x-2 text-gray-700 hover:text-mint transition-colors text-lg font-semibold"
+            <button className="flex items-center space-x-2 #fff hover:text-coral transition-colors text-lg font-semibold"
               onClick={() => window.open('https://youtu.be/W_bcZTgjomE?si=a8_M33GT5F7OGi0c', '_blank')}>
               <div className="bg-white rounded-full p-3 shadow-md hover:shadow-lg transition-all duration-300 hover:bg-mint">
                 <Play className="h-6 w-6 text-coral" />
@@ -173,7 +170,7 @@ export default function CTA() {
             </div>
           </div>
 
-          <div className="certification-logos w-full gap-10 mt-4">
+          <div className="certification-logos w-full gap-2 sm:gap-28 mt-4">
             <img
               className="certification-logo-image"
               src="/DPIIT-logo.png"

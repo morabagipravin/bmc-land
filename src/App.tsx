@@ -10,6 +10,9 @@ import Footer from "./components/Footer";
 import ContactUs from "./components/ContactUs";
 import About from "./components/About";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import FreeTrialForm from "./components/FreeTrialForm";
+import TermsAndConditions from "./components/TermsAndConditions";
+import Faq from "./components/faq";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,9 +36,12 @@ function App() {
               </>
             }
           />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/freetrialform" element={<FreeTrialForm />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/faq" element={<Faq />} />
         </Routes>
       </div>
     </Router>

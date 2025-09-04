@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -15,7 +15,9 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
           <div className="flex items-center space-x-2">
             {/* <BookOpen className="h-8 w-8 text-coral" /> */}
             {/* <span className="text-2xl font-playful text-white drop-shadow-md">BoostMyChild</span> */}
-            <img className="h-14" src="/BMC_R_Logo.png" alt="" />
+            <a href="/">
+              <img className="h-14" src="/BMC_R_Logo.png" alt="" />
+            </a>
           </div>
 
           <nav className="hidden md:flex space-x-8">
@@ -24,7 +26,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
               to="/"
               end
               className={({ isActive }) =>
-                `text-xl font-semibold transition-colors ${
+                `text-xl font-semibold transition-colors flex items-center ${
                   isActive
                     ? "text-coral border-b-2 border-coral"
                     : "text-gray-600 hover:text-coral"
@@ -38,7 +40,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `text-xl font-semibold transition-colors ${
+                `text-xl font-semibold transition-colors flex items-center ${
                   isActive
                     ? "text-coral border-b-2 border-coral"
                     : "text-gray-600 hover:text-coral"
@@ -48,11 +50,25 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
               About
             </NavLink>
 
+            {/* FAQ's */}
+            <NavLink
+                to="/faq"
+                className={({ isActive }) =>
+                  `text-xl font-semibold transition-colors flex items-center ${
+                    isActive
+                      ? "text-coral border-b-2 border-coral"
+                      : "text-gray-600 hover:text-coral"
+                  }`
+                }
+              >
+                FAQ's{" "}
+              </NavLink>
+
             {/* Contact */}
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `text-xl font-semibold transition-colors ${
+                `text-xl font-semibold transition-colors flex items-center ${
                   isActive
                     ? "text-coral border-b-2 border-coral"
                     : "text-gray-600 hover:text-coral"
@@ -61,6 +77,30 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
             >
               Contact Us
             </NavLink>
+
+            <NavLink
+              to="/freetrialform"
+              className={({ isActive }) =>
+                `bg-coral text-white rounded-full hover:bg-sunshine hover:text-coral p-3 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 space-x-2 text-lg font-semibold shadow-lg ${
+                  isActive
+                    ? "border border-2 border-white"
+                    : ""
+                }`
+              }
+            >
+              Get Started
+              <ArrowRight className="h-5 w-5" />
+            </NavLink>
+
+            {/* Free Trial Form */}
+            {/* <Link
+              to="/freetrialform"
+              className="bg-coral text-white rounded-full hover:bg-sunshine hover:text-coral p-3 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-lg font-semibold shadow-lg"
+            >
+              <span>Get Started</span>
+              <ArrowRight className="h-5 w-5" />
+            </Link> */}
+
 
             {/* Privacy Policy */}
             {/* <NavLink
@@ -117,11 +157,38 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-white/20">
             <nav className="flex flex-col items-center space-y-4">
-              {/* Home */}
-              <NavLink
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                to="/"
-                end
+                {/* Home */}
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                `text-xl font-semibold transition-colors ${
+                  isActive
+                    ? "text-coral border-b-2 border-coral"
+                    : "text-gray-600 hover:text-coral"
+                }`
+              }
+            >
+              Home
+            </NavLink>
+
+            {/* About */}
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `text-xl font-semibold transition-colors ${
+                  isActive
+                    ? "text-coral border-b-2 border-coral"
+                    : "text-gray-600 hover:text-coral"
+                }`
+              }
+            >
+              About
+            </NavLink>
+
+            {/* FAQ's */}
+            <NavLink
+                to="/faq"
                 className={({ isActive }) =>
                   `text-xl font-semibold transition-colors ${
                     isActive
@@ -130,38 +197,36 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
                   }`
                 }
               >
-                Home
+                FAQ's{" "}
               </NavLink>
 
-              {/* About */}
-              <NavLink
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                to="/about"
-                className={({ isActive }) =>
-                  `text-xl font-semibold transition-colors ${
-                    isActive
-                      ? "text-coral border-b-2 border-coral"
-                      : "text-gray-600 hover:text-coral"
-                  }`
-                }
-              >
-                About
-              </NavLink>
+            {/* Contact */}
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `text-xl font-semibold transition-colors ${
+                  isActive
+                    ? "text-coral border-b-2 border-coral"
+                    : "text-gray-600 hover:text-coral"
+                }`
+              }
+            >
+              Contact Us
+            </NavLink>
 
-              {/* Contact */}
-              <NavLink
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                to="/contact"
-                className={({ isActive }) =>
-                  `text-xl font-semibold transition-colors ${
-                    isActive
-                      ? "text-coral border-b-2 border-coral"
-                      : "text-gray-600 hover:text-coral"
-                  }`
-                }
-              >
-                Contact Us
-              </NavLink>
+            {/* Free Trial Form */}
+            <NavLink
+              to="/freetrialform"
+              className={({ isActive }) =>
+                `text-xl font-semibold transition-colors ${
+                  isActive
+                    ? "text-coral border-b-2 border-coral"
+                    : "text-gray-600 hover:text-coral"
+                }`
+              }
+            >
+              Get Started
+            </NavLink>
 
               {/* Privacy Policy */}
               {/* <NavLink

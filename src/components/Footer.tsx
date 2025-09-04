@@ -73,7 +73,7 @@ export default function Footer() {
             {/* <a href="https://www.boostmychild.com/privacy" className="text-gray-400 hover:text-sunshine text-sm transition-colors font-medium">Privacy Policy</a> */}
 
             <NavLink
-                          to="/privacy-policy"
+                          to="/terms-and-conditions"
                           end
                           className="text-gray-400 hover:text-sunshine text-sm transition-colors font-medium"
                         >

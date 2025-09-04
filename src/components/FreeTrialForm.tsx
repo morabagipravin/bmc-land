@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import RatingQuestion from "./RatingQuestion";
+import Footer from "./Footer";
 
 interface FormData {
   schoolName: string;
@@ -14,7 +15,7 @@ interface FormData {
   interestRate: string;
 }
 
-const FreeTrailForm: React.FC = () => {
+const FreeTrialForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     schoolName: "",
     nameAndDesignation: "",
@@ -33,23 +34,44 @@ const FreeTrailForm: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handlePostRequest = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // console.log("Form submitted:", formData);
-    alert("Form submitted successfully!");
+    try {
+      const response = await fetch("/api", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json', // Specify content type as JSON
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const responseData  = await response.json(); // Or response.text() if not JSON
+      console.log("Success:", responseData );
+      // Handle the successful response (e.g., update state, show message)
+    } catch (error) {
+      console.error("Error during POST request:", error);
+      // Handle errors (e.g., display error message to user)
+    }
   };
+
   return (
-    <div className="text-gray-600">
+    <div className="bg-gradient-to-br from-lavender via-sky/20 to-mint/30 text-gray-600">
       {/* Form Section */}
       <div>
         <img src="" alt="" />
       </div>
-      <div className="min-h-screen bg-white flex items-center justify-center p-6 font-semibold">
+      <div className="min-h-screen flex items-center justify-center p-6 font-semibold">
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handlePostRequest}
           className="bg-white border shadow-lg rounded-xl p-8 w-full max-w-6xl space-y-6"
         >
-          <h2 className="sm:text-4xl text-center">Schedule Your Free Demo of SAM</h2>
+          <h2 className="sm:text-4xl text-center">
+            Schedule Your Free Demo of SAM
+          </h2>
 
           <div className="flex flex-col gap-6 md:flex-row">
             {/* School Name */}
@@ -194,8 +216,9 @@ const FreeTrailForm: React.FC = () => {
           </div>
         </form>
       </div>
+      <Footer />
     </div>
   );
 };
 
-export default FreeTrailForm;
+export default FreeTrialForm;

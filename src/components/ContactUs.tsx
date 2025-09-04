@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import FreeTrailForm from "./FreeTrailForm";
 import Footer from "./Footer";
 import ContactusImg from "/contactus_img.png"
 
@@ -36,7 +35,7 @@ const ContactUs: React.FC = () => {
                     </div>
                     <br />
                     <div className="hidden sm:flex justify-center">
-                        <a className="bg-coral text-white px-8 py-4 rounded-full hover:bg-sunshine hover:text-coral transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-lg font-semibold shadow-lg" href="#freetrail"><span className="">Schedule Demo</span>
+                        <a className="bg-coral text-white px-8 py-4 rounded-full hover:bg-sunshine hover:text-coral transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-lg font-semibold shadow-lg" href="#freetrial"><span className="">Schedule Demo</span>
                             <ArrowRight className="h-5 w-5" />
                         </a>
                     </div>
@@ -117,7 +116,7 @@ const ContactUs: React.FC = () => {
                         
                         <div className="mt-10 mb-5 ">
                             <button
-                                id="freetrail"
+                                id="freetrialform"
                                 type="submit"
                                 className="bg-coral text-white  px-8 p-4 w-full rounded-full hover:bg-sunshine hover:text-coral transition-all duration-300 transform hover:scale-105 space-x-2 text-lg font-semibold shadow-lg"
                             >
@@ -128,7 +127,6 @@ const ContactUs: React.FC = () => {
                 </div>
             </div>
             <div>
-                <FreeTrailForm />
             </div>
             <Footer />
         </div>
