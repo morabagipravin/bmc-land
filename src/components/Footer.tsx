@@ -1,5 +1,6 @@
 import React from 'react';
-import { BookOpen, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import {Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -62,8 +63,24 @@ export default function Footer() {
             © 2025 BoostMyChild. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="https://www.boostmychild.com/privacy" className="text-gray-400 hover:text-sunshine text-sm transition-colors font-medium">Privacy Policy</a>
-            <a href="https://www.boostmychild.com/terms" className="text-gray-400 hover:text-mint text-sm transition-colors font-medium">Terms of Service</a>
+            <NavLink
+                          to="/privacy-policy"
+                          end
+                          className="text-gray-400 hover:text-sunshine text-sm transition-colors font-medium"
+                        >
+                        Privacy Policy
+            </NavLink>
+            {/* <a href="https://www.boostmychild.com/privacy" className="text-gray-400 hover:text-sunshine text-sm transition-colors font-medium">Privacy Policy</a> */}
+
+            <NavLink
+                          to="/terms-and-conditions"
+                          end
+                          className="text-gray-400 hover:text-sunshine text-sm transition-colors font-medium"
+                        >
+                        Terms of Service
+            </NavLink>
+
+            {/* <a href="https://www.boostmychild.com/terms" className="text-gray-400 hover:text-mint text-sm transition-colors font-medium">Terms of Service</a> */}
             {/* <a href="#" className="text-gray-400 hover:text-coral text-sm transition-colors font-medium">Cookie Policy</a> */}
           </div>
         </div>

@@ -1,5 +1,6 @@
-import React from "react";
-import { ArrowRight, CheckCircle } from "lucide-react";
+// import React from "react";
+import { ArrowRight, CheckCircle, Play } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function CTA() {
   const articles = [
@@ -82,8 +83,8 @@ export default function CTA() {
 
   return (
     <section className="py-20 bg-gradient-to-r from-coral to-sunshine">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center text-white">
+      <div className="">
+        <div className="text-center text-white w-full">
           <div className="featured-in">
             <h2 className="text-2xl md:text-4xl font-playful mb-6 drop-shadow-md">
               Featured In
@@ -91,7 +92,7 @@ export default function CTA() {
 
             {/* Auto-scroll container */}
             <div className="relative w-full overflow-hidden">
-              <div className="flex animate-marquee gap-6 md:gap-4 sm:gap-3 min-w-max">
+              <div className="flex animate-marquee gap-6 md:gap-4 sm:gap-3 min-w-max opacity-85">
                 {[...articles, ...articles].map((article, idx) => (
                   <img
                     key={idx}
@@ -115,16 +116,33 @@ export default function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-            <button
+            {/* <button
               className="bg-white text-coral px-8 py-4 rounded-full hover:bg-mint hover:text-white transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-lg font-bold shadow-lg"
               onClick={() =>
-                window.open("https://forms.gle/LMz9Mig6T3wfdyHw7", "_blank")
+                window.open("", "_blank")
               }
             >
               <span>Start Free Trial</span>
               <ArrowRight className="h-5 w-5" />
+            </button> */}
+
+            <Link
+              to="/freetrialform"
+              className="bg-coral text-white px-8 py-4 rounded-full hover:bg-sunshine hover:text-coral transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-lg font-semibold shadow-lg"
+            >
+              <span>Start Free Trial</span>
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+            
+            <button className="flex items-center space-x-2 #fff hover:text-coral transition-colors text-lg font-semibold"
+              onClick={() => window.open('https://youtu.be/W_bcZTgjomE?si=a8_M33GT5F7OGi0c', '_blank')}>
+              <div className="bg-white rounded-full p-3 shadow-md hover:shadow-lg transition-all duration-300 hover:bg-mint">
+                <Play className="h-6 w-6 text-coral" />
+              </div>
+              <span >Watch Demo</span>
             </button>
-            <button
+
+            {/* <button
               className="border-4 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-coral transition-all duration-300 text-lg font-bold shadow-lg"
               onClick={() =>
                 window.open(
@@ -134,7 +152,7 @@ export default function CTA() {
               }
             >
               Watch Demo
-            </button>
+            </button> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
@@ -152,7 +170,7 @@ export default function CTA() {
             </div>
           </div>
 
-          <div className="certification-logos w-full gap-10 mt-4">
+          <div className="certification-logos w-full gap-2 sm:gap-28 mt-4">
             <img
               className="certification-logo-image"
               src="/DPIIT-logo.png"
