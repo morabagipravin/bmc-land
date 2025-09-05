@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import RatingQuestion from "./RatingQuestion";
 import Footer from "./Footer";
+import { ToastContainer, toast } from "react-toastify";
 
 interface FormData {
   schoolName: string;
@@ -34,27 +35,33 @@ const FreeTrialForm: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const notifySuccess = () => toast("Enquiry request sent successfully !");
+  const notifyError = () => toast("Failed to sent a requiest try again later.");
+
   const handlePostRequest = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await fetch("/api", {
         method: "POST",
         headers: {
-          'Content-Type': 'application/json', // Specify content type as JSON
+          "Content-Type": "application/json", // Specify content type as JSON
         },
         body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
+        notifySuccess();
       }
-
-      const responseData  = await response.json(); // Or response.text() if not JSON
-      console.log("Success:", responseData );
-      // Handle the successful response (e.g., update state, show message)
+      //on a successully submission of the data
+      console.log(
+        "Success:The enquiry data is sent successfully for the: ",
+        formData.schoolName,
+      );
+      //Error handling
     } catch (error) {
       console.error("Error during POST request:", error);
-      // Handle errors (e.g., display error message to user)
+      notifyError();
     }
   };
 
